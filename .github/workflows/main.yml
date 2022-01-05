@@ -11,7 +11,7 @@ jobs:
         run: conftest pull git::https://github.com/dvdmelamed/opa-policy-test.git//policy
 
       - id: test
-        run: conftest test ./
+        run: conftest test docker-compose.yml
         
       - run: echo ${{ steps.test.outputs.stdout }}
       - run: echo ${{ steps.test.outputs.stderr }}
