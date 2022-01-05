@@ -7,7 +7,7 @@ jobs:
       - uses: artis3n/setup-conftest@v0
    
       - name: pull
-        run: conftest pull git::git@github.com:dvdmelamed/opa-policy-test.git//policy
+        run: conftest pull https://github.com/dvdmelamed/opa-policy-test.git//policy
 
       - id: verify
         run: conftest verify ./
