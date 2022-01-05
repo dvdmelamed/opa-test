@@ -7,7 +7,7 @@ jobs:
       - uses: artis3n/setup-conftest@v0
    
       - name: pull
-        run: conftest pull https://github.com/dvdmelamed/opa-policy-test/blob/main/policy/docker.rego
+        run: conftest pull https://raw.githubusercontent.com/dvdmelamed/opa-policy-test/main/policy/docker.rego
 
       - id: verify
         run: conftest verify ./
