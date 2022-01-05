@@ -4,13 +4,14 @@ jobs:
   Evaluate-Rules:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: artis3n/setup-conftest@v0
    
       - name: pull
         run: conftest pull git::https://github.com/dvdmelamed/opa-policy-test.git//policy
 
       - id: verify
-        run: conftest test ./
+        run: conftest verify ./
         
       - run: echo ${{ steps.verify.outputs.stdout }}
       - run: echo ${{ steps.verify.outputs.stderr }}
