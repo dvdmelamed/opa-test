@@ -1,0 +1,17 @@
+name: OPA Demo
+on: [push]
+jobs:
+  Evaluate-Rules:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: artis3n/setup-conftest@v0
+   
+      - name: pull
+        run: conftest git::git@github.com:dvdmelamed/opa-policy-test.git//policy
+
+      - id: verify
+        run: conftest verify ./
+        
+      - run: echo ${{ steps.verify.outputs.stdout }}
+      - run: echo ${{ steps.verify.outputs.stderr }}
+      - run: echo ${{ steps.verify.outputs.exitcode }}
