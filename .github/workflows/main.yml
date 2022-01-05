@@ -10,7 +10,7 @@ jobs:
         run: conftest pull git::https://github.com/dvdmelamed/opa-policy-test.git//policy
 
       - id: verify
-        run: conftest verify ./
+        run: conftest test ./
         
       - run: echo ${{ steps.verify.outputs.stdout }}
       - run: echo ${{ steps.verify.outputs.stderr }}
