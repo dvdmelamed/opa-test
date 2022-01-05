@@ -1,0 +1,8 @@
+version: "3.3.0"
+services:
+  web:
+    build: .
+    ports:
+     - "5000:5000"
+  redis:
+    image: "redis:2.4.5"
